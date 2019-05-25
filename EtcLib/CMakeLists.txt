@@ -13,8 +13,6 @@
 # limitations under the License.
 
 project(EtcLib)
-include_directories(./Etc)
-include_directories(./EtcCodec)
 
 file(GLOB SOURCES
 	${PROJECT_SOURCE_DIR}/Etc/*.h
@@ -22,3 +20,5 @@ file(GLOB SOURCES
 	${PROJECT_SOURCE_DIR}/Etc/*.cpp
 	${PROJECT_SOURCE_DIR}/EtcCodec/*.cpp)
 ADD_LIBRARY(EtcLib ${SOURCES})
+
+target_include_directories(EtcLib PUBLIC Etc EtcCodec)
